@@ -9,9 +9,9 @@ function rotationalCipher($input, $rotation_factor): string
 {
     $input_characters = str_split($input);
     // loop through all the characters in $input
-    $output = '';
+    $output = ''; // initialize output that we return
     foreach ($input_characters as $char) {
-        if (ctype_alpha($char)) {
+        if (ctype_alpha($char)) {// check if $char is an alphabet letter
             if (ctype_upper($char)) {
                 $offset = ord('A');
             } else {
@@ -20,14 +20,14 @@ function rotationalCipher($input, $rotation_factor): string
 
             $new_value = ord($char) + $rotation_factor;
             $sub = ($new_value - $offset);
-            $modded_value = fmod($sub, 26);
+            $modded_value = fmod($sub, 26);// here we have second parameter = 26 bc in alphabets total chars = 26, divide the $sub by total chars to get the remainder = cycle modded value.
             $cipher = chr($modded_value + $offset);
             $output .= $cipher;
-        } elseif (ctype_digit($char)) {
+        } elseif (ctype_digit($char)) {// check if $char is a number.
             $new_value = $char + $rotation_factor;
-            $modded_value = fmod($new_value, 10);
+            $modded_value = fmod($new_value, 10);// we have 10 characters from 0-9, so we are using second parameter as '10', divide the $new_value by 10 to get the remainder = cycle modded_value.
             $output .= $modded_value;
-        } else {
+        } else {// if $char is a symbol use it as is
             $output .= $char;
         }
     }
