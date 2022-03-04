@@ -47,7 +47,7 @@ class Solution
     }
 }
 
-// test
+// tests
 $sol = new Solution();
 
 $nums = [1, 2, 3, 1];
