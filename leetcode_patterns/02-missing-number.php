@@ -7,7 +7,7 @@ class Solution
 {
     /**
      * Faster algorithm
-     * @param array $nums
+     * @param Integer[] $nums
      * @return int
      */
     function missingNumber(array $nums): int

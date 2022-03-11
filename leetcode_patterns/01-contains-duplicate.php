@@ -5,6 +5,10 @@
 
 class Solution
 {
+    /**
+     * @param Integer[] $nums
+     * @return bool
+     */
     function containsDuplicate(array $nums): bool
     {
         $unique = array_flip(array_flip($nums));
@@ -16,7 +20,7 @@ class Solution
 
     /**
      * using array unique
-     * @param array $nums
+     * @param Integer[] $nums
      * @return bool
      */
     function containsDuplicateArrayUnique(array $nums): bool
